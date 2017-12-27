@@ -1,0 +1,15 @@
+The version is optimized by further parallelized, and it is based on communication optimization and computation optimization.
+
+Environment setup:
+I did the project on the HPC server. All environment setup is the same as hw3.
+1, firstly run command: "module load cuda/5.0".
+2, secondly run command : " module load gcc/4.4.3".
+
+How to use
+1, Edit the main.cu file, change the value of 'srcFile' to the source image file name, and change value of 'smpFile' to the sample image file name.
+2, use 'nvcc main.cu timer.c -o naive' to complie it(Assume you have load cuda/5.0 and gcc/4.4.3).
+3, use 'qsub cuda.sh' to submit the job(here I use gpu2).
+4, It will return a file named 'NC.o*', use 'less' command to see it.
+5, The final result (x, y) represent the matched point of top left point of sample image in the source image.
+
+
